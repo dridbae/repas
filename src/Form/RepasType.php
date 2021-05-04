@@ -20,13 +20,13 @@ class RepasType extends AbstractType
         $groupe = $options['groupe'] ?? null;
         $sousGroupe = $options['sousGroupe'] ?? null;
         $builder
+            ->add('name')
             ->add('groupe', EntityType::class, [
                 'mapped' => false,
                 'choice_label' => 'code',
                 'choice_value' => 'id',
                 'class' => Groupe::class
             ])
-            ->add('name')
         ;
 
         if (null !== $sousGroupe) {
